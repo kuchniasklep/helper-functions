@@ -9,5 +9,14 @@
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
-  ]
+  ],
+
+  "repository": { 
+    "type": "git", 
+    "url": "https://github.com/kuchniasklep/helper-functions.git" 
+  },
+
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
