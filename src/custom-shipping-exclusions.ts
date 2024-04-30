@@ -1,7 +1,6 @@
 export interface ShippingMethod {
     id: string
     name: string
-    price: {amount: number, currency: string},
     minimumOrderPrice?: {amount: number, currency: string},
     maximumOrderPrice?: {amount: number, currency: string},
     metafields?: any
