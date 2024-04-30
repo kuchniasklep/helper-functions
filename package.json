@@ -13,7 +13,7 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "typescript": "^2.7.2"
+    "typescript": "^5.4.5"
   },
   "repository": {
     "type": "git",
