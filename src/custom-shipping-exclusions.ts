@@ -17,7 +17,7 @@ export interface AvailabilityOption {
     value: string
 }
 
-export function excluded_by_metafields(availableMethods: ShippingMethod[], catalogueIds: string[], pallet_shipping_required: boolean, parcel_locker_available: boolean) {
+export function excluded_by_metafields(availableMethods: ShippingMethod[], catalogueIds: string[][], pallet_shipping_required: boolean, parcel_locker_available: boolean) {
     return availableMethods?.map(method => {
         let reasons = [];
         
@@ -27,7 +27,7 @@ export function excluded_by_metafields(availableMethods: ShippingMethod[], catal
             .map(entry => ({name: entry.label, ...(JSON.parse(entry.value))}) )
           : [];
 
-        const catalogue_match = catalogue_entries.some(entry => catalogueIds?.some(ids => ids.includes(entry.id)));
+        const catalogue_match = catalogue_entries.some(entry => catalogueIds?.every(ids => ids.includes(entry.id)));
     
         if(catalogue_entries?.length > 0 && !catalogue_match && !catalogue_exclusions)
           reasons.push("CATALOGUE_ITEMS_REQUIRED");
