@@ -4,18 +4,15 @@
   "author": "Hazel Szoka (Hazelcode)",
   "version": "1.0.0",
   "license": "BSD-3-Clause",
-
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
   ],
-
-  "repository": { 
-    "type": "git", 
-    "url": "https://github.com/kuchniasklep/helper-functions.git" 
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuchniasklep/helper-functions.git"
   },
-
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   }
