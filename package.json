@@ -18,8 +18,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kuchniasklep/helper-functions.git"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
   }
 }
