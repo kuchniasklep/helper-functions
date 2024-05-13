@@ -3,4 +3,4 @@ export {
     ShippingMethod,
     CatalogueEntry,
     AvailabilityOption 
-} from "./custom-shipping-exclusions"
+} from "./custom-shipping-exclusions.js"
