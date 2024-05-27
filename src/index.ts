@@ -3,13 +3,13 @@ export {
     ShippingMethod,
     CatalogueEntry,
     AvailabilityOption,
-} from './custom-shipping-exclusions';
+} from './custom-shipping-exclusions.js';
 
-export { safeJsonParse } from './utility';
+export { safeJsonParse } from './utility.js';
 
 export {
     LoyaltyPointSettings,
     maxPointsForOrderValue,
     pointsToValue,
     valueToPoints,
-} from './point-system-calculations';
+} from './point-system-calculations.js';

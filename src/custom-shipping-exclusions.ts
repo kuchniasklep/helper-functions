@@ -1,4 +1,4 @@
-import { safeJsonParse } from './utility';
+import { safeJsonParse } from './utility.js';
 
 export interface ShippingMethod {
     id: string;
