@@ -1,23 +1,44 @@
 {
-  "name": "@kuchniasklep/helper-functions",
-  "description": "Helper functions for use in kuchniasklep extension apps and frontends",
-  "author": "Hazel Szoka (Hazelcode)",
-  "version": "1.0.7",
-  "license": "BSD-3-Clause",
-  "main": "dist/index.js",
-  "type": "module",
-  "types": "dist/index.d.ts",
-  "files": [
-    "/dist"
-  ],
-  "scripts": {
-    "build": "tsc"
-  },
-  "devDependencies": {
-    "typescript": "^5.4.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kuchniasklep/helper-functions.git"
-  }
+    "name": "@kuchniasklep/helper-functions",
+    "description": "Helper functions for use in kuchniasklep extension apps and frontends",
+    "author": "Hazel Szoka (Hazelcode)",
+    "version": "1.0.8",
+    "license": "BSD-3-Clause",
+    "main": "dist/index.js",
+    "type": "module",
+    "types": "dist/index.d.ts",
+    "files": [
+        "/dist"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "lint": "eslint src test --ext .ts",
+        "lint-fix": "eslint src test --ext .ts --fix",
+        "format": "prettier --write src test",
+        "test": "jest --silent --coverage"
+    },
+    "devDependencies": {
+        "@types/jest": "^28.1.1",
+        "@typescript-eslint/eslint-plugin": "^7.10.0",
+        "eslint": "^8.21.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "jest": "^28.1.1",
+        "prettier": "^2.7.1",
+        "ts-jest": "^28.0.5",
+        "typescript": "^5.4.5"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kuchniasklep/helper-functions.git"
+    },
+    "keywords": [
+        "helper",
+        "functions",
+        "kuchniasklep"
+    ],
+    "bugs": {
+        "url": "https://github.com/kuchniasklep/helper-functions/issues"
+    },
+    "homepage": "https://github.com/kuchniasklep/helper-functions#readme"
 }
