@@ -1,7 +1,9 @@
 export interface LoyaltyPointSettings {
+    enabled: boolean;
     points_to_value: number;
     value_to_points_percentage: number;
     max_order_value_percentage: number;
+    min_order_value: number;
 }
 
 export function valueToPoints(value: number, settings: LoyaltyPointSettings): number {

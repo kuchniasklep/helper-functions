@@ -3,13 +3,15 @@ import {
     valueToPoints,
     pointsToValue,
     maxPointsForOrderValue,
-} from '../src/point-system-calculations';
+} from '../src/point-system-settings';
 
-describe('Loyalty Point Functions', () => {
+describe('Loyalty Point Settings Functions', () => {
     const settings: LoyaltyPointSettings = {
+        enabled: true,
         points_to_value: 25,
         value_to_points_percentage: 50,
         max_order_value_percentage: 50,
+        min_order_value: 100,
     };
 
     describe('valueToPoints', () => {

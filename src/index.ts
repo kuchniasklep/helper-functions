@@ -12,4 +12,10 @@ export {
     maxPointsForOrderValue,
     pointsToValue,
     valueToPoints,
-} from './point-system-calculations.js';
+} from './point-system-settings.js';
+
+export {
+    LoyaltyPointEntry,
+    LoyaltyPointEntryStatus,
+    countApprovedPoints,
+} from './point-system-entries.js';
