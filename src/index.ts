@@ -19,3 +19,12 @@ export {
     LoyaltyPointEntryStatus,
     countApprovedPoints,
 } from './point-system-entries.js';
+
+export {
+    EasyprotectSettings,
+    EligibleForWarranty,
+    WarrantyUpdate,
+    eligibleProducts,
+    warrantyLines,
+    warrantyUpdates
+} from './additional-warranties.js';
