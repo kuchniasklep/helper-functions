@@ -11,8 +11,8 @@ export interface CheckoutLine {
 
     variant: {
         id: string;
-        min_value?: string;
-        max_value?: string;
+        min_value?: string | null;
+        max_value?: string | null;
 
         product: {
             id: string;
@@ -25,15 +25,15 @@ export interface CheckoutLine {
                             id: string;
                         };
                     }[];
-                };
-            };
+                } | null;
+            } | null;
 
             collections?: {
                 id: string;
-            }[];
+            }[] | null;
 
             productType: {
-                category?: string;
+                category?: string | null;
             };
         };
     };
@@ -107,7 +107,7 @@ export interface EasyprotectSettings {
     steps: number[];
 }
 
-export function eligibleProducts(lines: CheckoutLine[], settings: EasyprotectSettings) {
+export function eligibleProducts(lines: CheckoutLine[], settings: EasyprotectSettings) : EligibleForWarranty[] {
     if(settings.enabled == false) return [];
     const easyprotectCatalogue = settings.catalogue.map(cat => cat.id);
 
@@ -125,10 +125,11 @@ export function eligibleProducts(lines: CheckoutLine[], settings: EasyprotectSet
         return {
             id: line.variant.id,
             price: price,
-            range: steps.find(step => step[0] <= price && price <= step[1]),
+            range: steps.find(step => step[0] <= price && price <= step[1]) ?? [],
             quantity: line.quantity
         }
-    });
+    })
+    .filter(eligible => eligible.range.length == 2);
 }
 
 function productTypeIsGeneral(line: CheckoutLine) {
