@@ -39,7 +39,7 @@ export interface CheckoutLine {
     };
 }
 
-export function warrantyLines(lines: CheckoutLine[]) {
+export function warrantyLines<T extends CheckoutLine>(lines: T[]) : T[] {
     return lines.filter(l =>
         l.variant.product.productType.category === "warranty"
     ) ?? [];
