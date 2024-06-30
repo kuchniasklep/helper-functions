@@ -2,34 +2,41 @@ import { CatalogueEntry } from "./custom-shipping-exclusions";
 import { chunk } from "./utility";
 
 export interface CheckoutLine {
-    id: string,
-    quantity: number
+    id: string;
+    quantity: number;
 
     undiscountedUnitPrice: {
-        amount: number
-    }
+        amount: number;
+    };
 
     variant: {
-        id: string
-        min_value: string
-        max_value: string
+        id: string;
+        min_value?: string;
+        max_value?: string;
 
         product: {
-            id: string
-            category: {
-                id: string
-                ancestors: { edges: { node: {
-                    id: string
-                }}[]}
-            }
-            collections: {
-                id: string
-            }[]
+            id: string;
+
+            category?: {
+                id: string;
+                ancestors?: {
+                    edges: {
+                        node: {
+                            id: string;
+                        };
+                    }[];
+                };
+            };
+
+            collections?: {
+                id: string;
+            }[];
+
             productType: {
-                category: string
-            }
-        }
-    }
+                category?: string;
+            };
+        };
+    };
 }
 
 export function warrantyLines(lines: CheckoutLine[]) {
@@ -138,7 +145,7 @@ function productInCatalogue(line: CheckoutLine, catalogue: string[]) {
         line.variant.id,
         line.variant.product.id,
         ...(line.variant.product.category ? [line.variant.product.category?.id] : []),
-        ...(line.variant.product.category.ancestors.edges.map(c => c.node.id) ?? []),
+        ...(line.variant.product.category?.ancestors?.edges.map(c => c.node.id) ?? []),
         ...(line.variant.product.collections?.map(c => c.id) ?? []),
     ].includes(id));
 }
