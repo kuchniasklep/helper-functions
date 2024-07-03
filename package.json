@@ -2,7 +2,7 @@
     "name": "@kuchniasklep/helper-functions",
     "description": "Helper functions for use in kuchniasklep extension apps and frontends",
     "author": "Hazel Szoka (Hazelcode)",
-    "version": "1.0.14",
+    "version": "1.0.15",
     "license": "BSD-3-Clause",
     "main": "dist/index.js",
     "type": "module",

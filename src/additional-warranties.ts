@@ -1,5 +1,5 @@
-import { CatalogueEntry } from "./custom-shipping-exclusions";
-import { chunk } from "./utility";
+import { CatalogueEntry } from "./custom-shipping-exclusions.js";
+import { chunk } from "./utility.js";
 
 export interface CheckoutLine {
     id: string;
